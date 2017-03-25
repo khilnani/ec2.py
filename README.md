@@ -1,8 +1,10 @@
 # ec2.py
 
-Simple CLI / module to start/stop EC2 instances Edit
-Add topics
+Simple CLI / module to start/stop EC2 instances
 
+## Developer Setup
+
+- `make dev`
 
 ## AMI Info
 
