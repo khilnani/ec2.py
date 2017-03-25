@@ -1,3 +1,3 @@
 #!/usr/bin/env python
 
-__title__ = 'lambda-py-extensions'
+__title__ = 'ec2'
