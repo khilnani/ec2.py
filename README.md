@@ -1,6 +1,7 @@
 # ec2.py
 
-> Simple CLI / module to create/start/stop EC2 instances
+> Simple CLI / module to create/start/stop EC2 instances.
+> Originally created to spin up instances to compile Python extensions for AWS Lambda projects.
 
 Pypi Link: https://pypi.python.org/pypi/ec2.py
 
