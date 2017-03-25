@@ -6,13 +6,14 @@ from setuptools import setup, find_packages
 readme = open('README.md', 'r').read()
 setup(
     name='ec2.py',
-    version='0.1.0',
+    version='0.1.2',
     url='https://github.com/khilnani/ec2.py',
     license='MIT',
     author='khilnani',
     author_email='nik@khilnani.org',
-    description='Simple CLI / module to start/stop EC2 instances',
+    description='Simple CLI / module to create/start/stop EC2 instances',
     include_package_data=True,
+    package_data={'ec2': ['logging.ini']},
     long_description=readme,
     packages=find_packages(),
     install_requires=['boto3'],

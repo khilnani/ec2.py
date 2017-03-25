@@ -10,32 +10,36 @@ import boto3
 
 from utils import logger
 
+##########################################################################
 
-
-key_name = "lambda-py-extentions"
+key_name = "ec2.py"
 aws_image = "ami-6869aa05"
 instance_type = "t2.nano"
 
-session = None
-ec2 = None
-client = None
-key_pair = None
-instance_id = None
-instance_state = None
 
-parser = argparse.ArgumentParser(description='CLI to compile python dependencies for AWS Lambda')
-parser.add_argument('-p', '--profile', dest='aws_profile', metavar="AWS_PROFILE", help="AWS Profile")
-parser.add_argument('-k', '--key', dest='aws_key', metavar="AWS_KEY", help="Key name to use. Default: %s" % key_name)
-parser.add_argument('-t', '--type', dest='aws_type', metavar="AWS_INS_TYPE", help="Instance type. Default: %s" % instance_type)
+parser = argparse.ArgumentParser(description='Simple CLI / module to create/start/stop EC2 instances')
+parser.add_argument('-p', '--profile', dest='aws_profile', metavar="AWS_PROFILE", help="AWS Profile Name")
+parser.add_argument('-k', '--key', dest='aws_key', metavar="AWS_KEY", help="AWS Key name to use. Default: %s" % key_name)
+parser.add_argument('-t', '--type', dest='aws_type', metavar="AWS_INS_TYPE", help="AWS Instance type. Default: %s" % instance_type)
 parser.add_argument('-d', '--dry-run', action='store_true', help="Dry run")
-parser.add_argument('-i', '--info', action='store_true', help="Instance info. Only IP. If verbose, prints additional info.")
-parser.add_argument('-s', '--stop', action='store_true', help="Stop when done")
-parser.add_argument('-r', '--remove', action='store_true', help="Remove all. Terminate instance and delete key")
-parser.add_argument('-v', '--verbose', action='store_true', help="Verbose")
+parser.add_argument('-i', '--info', action='store_true', help="Print instance info. Default: Only IP to allow usage in other scripts. If verbose is set, prints additional info.")
+parser.add_argument('-s', '--stop', action='store_true', help="Stop the instance")
+parser.add_argument('-r', '--remove', action='store_true', help="Remove: Terminate instance and delete created key")
+parser.add_argument('-v', '--verbose', action='store_true', help="Verbose mode")
 
 args = parser.parse_args()
 
-if __name__ == '__main__':
+##########################################################################
+
+def main():
+    global key_name, aws_image, instance_type
+
+    session = None
+    ec2 = None
+    client = None
+    key_pair = None
+    instance_id = None
+    instance_state = None
 
     session = boto3.Session( profile_name=args.aws_profile )
     ec2 = session.resource('ec2')
@@ -188,4 +192,9 @@ if __name__ == '__main__':
         else:
             logger.error('Instance %s was running, but could not be stopped' % (instance_id))
 
+##########################################################################
 
+if __name__ == '__main__':
+    main()
+
+##########################################################################
