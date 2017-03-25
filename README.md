@@ -9,7 +9,7 @@ Features:
 
 - Single command creation of security key and instance
 - Idempotent, repeated calls do not result in multiple instances
-- Waits for AWS task to complete and provides confirmation.
+- Waits for AWS tasks to complete and provides confirmation.
 
 Supports:
 
