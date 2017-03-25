@@ -47,7 +47,12 @@ but requires creation of more than one keyfile for multiple instances.
 - `ec2 -p myProfile -k myKey -t t2.medium` - Use a custom profile, key name and instance type.
 - `ec2 -h` - Help
 
+## SSH to a created instance:
 
+- Make sure the pem key has chmod 0600, example: `chmod 600 ec2.py.pem`
+- Make sure the security group for the instance has port 22 connectivity allowed.
+- Get the Public DNS name for the instance: `ec2 -i`
+- Connect: `ssh ec2-user@DNS_NAME -i ec2.py.pem`
 
 ## Developer Setup
 
