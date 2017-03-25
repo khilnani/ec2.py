@@ -1,4 +1,5 @@
-# lambda-py-extentions
+# lambda-py-extensions
+
 Easily compile python extensions for AWS Lambda
 
 AMI Info
