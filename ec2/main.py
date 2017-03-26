@@ -87,11 +87,11 @@ def main():
             for ins in res['Instances']:
                 ins_id = ins['InstanceId']
                 ins_state = ins['State']['Name']
-                print('Checking... Instance %s is %s' % (ins_id, ins_state))
+                if not args.info:
+                    print('Instance %s is %s' % (ins_id, ins_state))
                 if ins_state not in ('shutting-down', 'terminated'):
                     instance_id = ins_id
                     instance_state = ins_state
-                    print("Instance %s is %s" % (instance_id, instance_state))
                     if args.info:
                         if args.verbose:
                             print('Image Id: %s' % ins['ImageId'])
