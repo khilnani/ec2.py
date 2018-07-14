@@ -13,6 +13,7 @@ from utils import logger
 ##########################################################################
 
 key_name = "ec2.py"
+# https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html
 aws_image = "ami-4fffc834"
 instance_type = "t2.nano"
 
