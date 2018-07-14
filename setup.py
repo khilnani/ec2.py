@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 readme = open('README.md', 'r').read()
 setup(
     name='ec2.py',
-    version='0.1.4',
+    version='0.1.5',
     url='https://github.com/khilnani/ec2.py',
     license='MIT',
     author='khilnani',
