@@ -66,8 +66,8 @@ but requires creation of more than one keyfile for multiple instances.
 
 ## AMI Info
 
-- AMI used: amzn-ami-hvm-2016.03.3.x86_64-gp2 (ami-6869aa05)
-- Selected based on compatability with AWS Lambda environment
+- AMI name: amzn-ami-hvm-2017.03.1.20170812-x86_64-gp2
+- Selected based on https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html
 
 ## Articles
 
