@@ -13,7 +13,7 @@ from utils import logger
 ##########################################################################
 
 key_name = "ec2.py"
-aws_image = "ami-6869aa05"
+aws_image = "ami-4fffc834"
 instance_type = "t2.nano"
 
 
