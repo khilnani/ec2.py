@@ -22,7 +22,7 @@ setup(
             'ec2 = ec2.main:main',
             ]
     },
-    keywords=('utility', 'api', 'ec2', 'aws', 'helper'),
+    keywords=['utility', 'api', 'ec2', 'aws', 'helper'],
     classifiers=[
           'Development Status :: 3 - Alpha',
           'Environment :: Console',
