@@ -5,7 +5,7 @@
 
 Pypi Link: https://pypi.python.org/pypi/ec2.py
 
-Features:
+Features: 
 
 - Single command creation of security key and instance
 - Idempotent, repeated calls do not result in multiple instances
